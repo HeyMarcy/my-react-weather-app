@@ -38,13 +38,11 @@ class App extends React.Component {
     }
 
     this.setState({
-      // currentConditions: currentConditions,
-      // city: city,
       days: days
     });
   };
   updateCurrentConditionsState = data => {
-    const city = data.name;
+    const city = data.currentConditions.name;
  
     const currentConditions = {
       weather_desc: data.weather[0].description,
