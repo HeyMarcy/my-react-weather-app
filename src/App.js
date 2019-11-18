@@ -6,6 +6,7 @@ import DayCard from './components/DayCard';
 
 function checkStatus(response) {
   if (response.ok) {
+    console.log("promoseResponse",response)
     return Promise.resolve(response);
   } else {
     return Promise.reject(new Error(response.statusText));
@@ -74,11 +75,23 @@ class App extends React.Component {
   .then(data => {
     const currentWeather = data[0];
     const forecast = data[1];
-    this.updateCurrentConditionsState(currentWeather);
+    
+    console.log('currentWeather', currentWeather);
+    this.updateCurrentConditionsState(currentWeather)
     this.updateForcastState(forecast);
   })
 }
 
+  // makeApiCall = async city => {
+  //   const api_data = await fetch(
+  //     `http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&APPID=${process.env.REACT_APP_API_KEY}`
+  //   ).then(resp => resp.json());
+
+    // if (api_data.cod === '200') {
+    //   await this.updateState(api_data);
+    //   return true;
+    // } else return false;
+  // };
 
   // returns array with Indices of the next five days in the list
   // from the API data (every day at 12:00 pm)
