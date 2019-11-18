@@ -4,6 +4,8 @@ import ContainerWeather from './components/ContainerWeather';
 import CityInput from './components/CityInput';
 import DayCard from './components/DayCard';
 
+const REACT_APP_API_KEY="ce02a63a24afe63b1ad23226d13c0b05"
+
 function checkStatus(response) {
   if (response.ok) {
     console.log("promoseResponse",response)
@@ -62,8 +64,8 @@ class App extends React.Component {
   // tries to make an API call with the given city name and triggers state update
   makeApiCall = async city => {
     const urls = [
-      `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&APPID=${process.env.REACT_APP_API_KEY}`,
-      `http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&APPID=${process.env.REACT_APP_API_KEY}`
+      `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&APPID=${REACT_APP_API_KEY}`,
+      `http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&APPID=${REACT_APP_API_KEY}`
     ];
  
     Promise.all(urls.map(url =>
