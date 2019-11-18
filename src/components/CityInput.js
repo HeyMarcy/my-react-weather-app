@@ -12,7 +12,7 @@ export default class CityInput extends React.Component {
       if (eventKey === 13) {
         if (/^[a-zA-ZäöüÄÖÜß ]+$/.test(city)) {
           e.target.classList.add('loading');
-
+          console.log('cityInputProps', this.props)
           if (await this.props.makeApiCall(city)) e.target.placeholder = 'Enter a City...';
           else e.target.placeholder = 'City was not found, try again...';
         } else e.target.placeholder = 'Please enter a valid city name...';
