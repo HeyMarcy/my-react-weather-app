@@ -38,11 +38,13 @@ class App extends React.Component {
     }
 
     this.setState({
+      // currentConditions: currentConditions,
+      // city: city,
       days: days
     });
   };
   updateCurrentConditionsState = data => {
-    const city = data.currentConditions.name;
+    const city = data.name;
  
     const currentConditions = {
       weather_desc: data.weather[0].description,
@@ -63,8 +65,8 @@ class App extends React.Component {
       `http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&APPID=${process.env.REACT_APP_API_KEY}`
     ];
  
-    Promise.all(urls.map(async url =>
-      await fetch(url)
+    Promise.all(urls.map(url =>
+      fetch(url)
       .then(checkStatus)                 
       .then(parseJSON)
       .catch(error => console.log('There was a problem!', error))
@@ -76,6 +78,7 @@ class App extends React.Component {
     this.updateForcastState(forecast);
   })
 }
+
 
   // returns array with Indices of the next five days in the list
   // from the API data (every day at 12:00 pm)
