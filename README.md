@@ -1,3 +1,9 @@
+# Weather Forecast App
+
+#### Just input a city and see today's current weather plus the forcast for the next four days.
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
