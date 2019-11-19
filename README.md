@@ -6,7 +6,9 @@ This is still buggy! It will break if the input city is invalid.
 
 Also, for the sake of convenience for this demo, I've exposed the API key as a variable within the app. I realize this is insecure.
 
-
+##### Still to do:
+• Make responsive ( Oops...)
+• Refactor to use Context and Hooks
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
